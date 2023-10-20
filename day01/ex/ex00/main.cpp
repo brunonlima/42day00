@@ -76,16 +76,19 @@ int main() {
     
 
     Workshop* workshop = new Workshop() ;
+    Workshop* workshop2 = new Workshop() ;
 
 
     worker->registerToWorkshop(workshop);
     worker2->registerToWorkshop(workshop);
 
+    worker->registerToWorkshop(workshop2);
     workshop->executeWorkDay();
 
     worker->leaveWorkshop(workshop);
 
     workshop->executeWorkDay();
+    workshop2->executeWorkDay();
 
 
     delete worker2;

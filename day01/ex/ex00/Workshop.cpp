@@ -1,7 +1,12 @@
 #include "Workshop.hpp"
-#include "Worker.hpp" 
+
+
 Workshop::Workshop() {
     // Construtor, se necessário
+}
+
+Workshop::~Workshop(){
+
 }
 
 void Workshop::registerWorker(Worker* worker) {

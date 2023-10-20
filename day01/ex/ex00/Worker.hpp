@@ -1,10 +1,10 @@
 #ifndef WORKER_HPP
 #define WORKER_HPP
 #include "Tool.hpp"
-#include "Workshop.hpp"
 #include <vector>
+#include "Workshop.hpp"
 
-class Shovel; 
+class Workshop;
 
 class Worker {
 public:

@@ -1,12 +1,15 @@
 #ifndef WORKSHOP_HPP
 #define WORKSHOP_HPP
 
-#include <vector> 
 #include "Worker.hpp" 
+#include <vector> 
+class Worker;
+
 
 class Workshop {
 public:
     Workshop(); // Construtor
+    ~Workshop();
 
     void registerWorker(Worker* worker);
     void releaseWorker(Worker* worker);
