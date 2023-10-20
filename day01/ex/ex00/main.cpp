@@ -33,10 +33,11 @@ int main() {
     worker->displayInfo();
 
     // O Worker usa a Shovel
-    worker2->use();
+    worker2->useTools();
    // worker->retrieveTool();
 
-   
+   // Include Worker header if you have a separate Worker class header
+
     // Exibe informações após o uso
     std::cout << "\nInformações do Worker (depois de usar a Ferramenta):" << std::endl;
     worker->displayInfo();
@@ -44,7 +45,7 @@ int main() {
     
     worker2->assignTool(shovel);
     worker2->assignTool(hammer);
-    worker2->use();
+    worker2->useTools();
 
     std::cout << "\nInformações do Worker (depois de usar a Shovel):" << std::endl;
     worker2->displayInfo();
@@ -73,6 +74,20 @@ int main() {
     
    // }
     
+
+    Workshop* workshop = new Workshop() ;
+
+
+    worker->registerToWorkshop(workshop);
+    worker2->registerToWorkshop(workshop);
+
+    workshop->executeWorkDay();
+
+    worker->leaveWorkshop(workshop);
+
+    workshop->executeWorkDay();
+
+
     delete worker2;
     delete worker;
     delete hammer;

@@ -13,8 +13,7 @@ Worker::Worker(int x, int y, int z, int level, int exp) {
 }
 
 Worker::~Worker() {
-    // Delete the shovel object if it's not assigned to another worker
-    
+
     
 }
 
@@ -99,8 +98,8 @@ void Worker::displayInfo() {
     }
 }
 
-// Work calabresoo!!
-void Worker::use() {
+
+void Worker::useTools() {
     if (!this->tools.empty()) {
         for (std::vector<Tool*>::iterator it = this->tools.begin(); it != this->tools.end(); ++it) {
             
@@ -110,6 +109,18 @@ void Worker::use() {
             }
         }
     } else {
-            std::cout << "Etou sem ferramenta " << std::endl;;
+            std::cout << "Estou sem ferramenta " << std::endl;;
     }
+}
+
+void Worker::work(){
+   std::cout <<" Worker At" << "Position: x = " << this->coordonnee.x << ", y = " << this->coordonnee.y << ", z = " << this->coordonnee.z <<" is working" << std::endl;
+}
+
+void Worker::registerToWorkshop(Workshop* workshop) {
+        workshop->registerWorker(this);
+}
+
+void Worker::leaveWorkshop(Workshop* workshop) {
+        workshop->releaseWorker(this);
 }

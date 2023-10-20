@@ -1,6 +1,7 @@
 #ifndef WORKER_HPP
 #define WORKER_HPP
 #include "Tool.hpp"
+#include "Workshop.hpp"
 #include <vector>
 
 class Shovel; 
@@ -15,7 +16,10 @@ public:
 
     void assignTool(Tool* tool);
     void retrieveTool(Worker* nextWorker, Tool* tool );
-    void use();
+    void useTools();
+    void work();
+    void registerToWorkshop(Workshop* workshop);
+    void leaveWorkshop(Workshop* workshop);
 
     // Getters
     int getX() const;
