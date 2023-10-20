@@ -1,0 +1,35 @@
+CC = c++
+CFLAGS = -std=c++98 -Wall -Wextra -Werror
+
+NAME = ex00
+BIN_DIR = bin
+SRC_DIR = .
+HEADER_DIR = .
+
+SRCS = $(wildcard $(SRC_DIR)/*.cpp)
+OBJS = $(patsubst $(SRC_DIR)/%.cpp, $(BIN_DIR)/%.o, $(SRCS))
+
+all: $(BIN_DIR) $(NAME)
+
+$(BIN_DIR):
+	mkdir -p $(BIN_DIR)
+
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	chmod +x $(NAME)
+
+$(BIN_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CC) $(CFLAGS) -I$(HEADER_DIR) -c $< -o $@
+
+clean:
+	rm -rf $(BIN_DIR)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+val: all
+	valgrind --quiet ./$(NAME)
+
+.PHONY: all clean fclean re
