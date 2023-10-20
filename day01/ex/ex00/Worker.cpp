@@ -19,16 +19,25 @@ Worker::~Worker() {
 }
 
 void Worker::assignTool(Tool* tool) {
+    this->tools.push_back(tool);
     
-    this->tool = tool;
-    this->tool->setBusy(true);
     
 }
 
-void Worker::retrieveTool() {
+void Worker::retrieveTool(Worker* nextWorker, Tool* tool) {
     
-    this->tool->setBusy(false);
-    this->tool = NULL; // Remove the shovel from the worker
+    for (std::vector<Tool*>::iterator it = this->tools.begin(); it != this->tools.end(); ++it) {
+        if ((*it) == tool) {
+            // Tool encontrada, remova-a da lista
+            this->tools.erase(it);
+            //Atribuir ao Worker
+            nextWorker->assignTool((*it));           
+            return ;
+        } 
+    }
+    
+
+    std::cout << "Ferramenta não encontrada." << std::endl;
 
 }
 
@@ -53,9 +62,9 @@ int Worker::getExp() const {
     return this->stat.exp;
 }
 
-Tool *Worker::getTool() const
-{
-    return this->tool;
+const std::vector<Tool*>& Worker::getTools() const{
+    return this->tools;
+
 }
 
 // Setters
@@ -71,7 +80,36 @@ void Worker::setStatistic(int level, int exp) {
 }
 
 // Method to display information
-void Worker::displayInfo() const {
+void Worker::displayInfo() {
     std::cout << "Position: x = " << this->coordonnee.x << ", y = " << this->coordonnee.y << ", z = " << this->coordonnee.z << std::endl;
     std::cout << "Statistic: level = " << this->stat.level << ", exp = " << this->stat.exp << std::endl;
+   
+    if (!this->tools.empty()) {
+        
+        for (std::vector<Tool*>::iterator it = this->tools.begin(); it != this->tools.end(); ++it) {
+            
+            if ((*it) != NULL) {
+                std::cout << "Ferramenta Utilizada: " << (*it)->getName() << std::endl;
+                std::cout << "Número de usos restantes da Ferramenta: " << (*it)->getNumberOfUses() << std::endl;
+            } 
+        }
+
+    } else {
+            std::cout << "Estou sem ferramenta " << std::endl;;
+    }
+}
+
+// Work calabresoo!!
+void Worker::use() {
+    if (!this->tools.empty()) {
+        for (std::vector<Tool*>::iterator it = this->tools.begin(); it != this->tools.end(); ++it) {
+            
+            if ((*it) != NULL) { 
+                //usar ferramentas
+                (*it)->use();
+            }
+        }
+    } else {
+            std::cout << "Etou sem ferramenta " << std::endl;;
+    }
 }

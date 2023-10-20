@@ -1,6 +1,7 @@
 #ifndef WORKER_HPP
 #define WORKER_HPP
 #include "Tool.hpp"
+#include <vector>
 
 class Shovel; 
 
@@ -13,7 +14,8 @@ public:
     ~Worker();
 
     void assignTool(Tool* tool);
-    void retrieveTool();
+    void retrieveTool(Worker* nextWorker, Tool* tool );
+    void use();
 
     // Getters
     int getX() const;
@@ -21,14 +23,14 @@ public:
     int getZ() const;
     int getLevel() const;
     int getExp() const;
-    Tool* getTool() const;
+    const std::vector<Tool*>& getTools() const;
 
     // Setters
     void setPosition(int x, int y, int z);
     void setStatistic(int level, int exp);
 
     // Method to display information
-    void displayInfo() const;
+    void displayInfo();
 
 private:
     struct Position {
@@ -42,7 +44,7 @@ private:
         int exp;
     } stat;
 
-    Tool* tool;
+    std::vector<Tool*> tools;
 };
 
 #endif

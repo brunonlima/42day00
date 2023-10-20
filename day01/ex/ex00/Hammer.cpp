@@ -1,7 +1,8 @@
 #include "Hammer.hpp"
+#include "Tool.hpp"
+#include <string>
 
-
-Hammer::Hammer() {
+Hammer::Hammer() : Tool::Tool(){
   this->setName("Hammer");
 }
 
@@ -34,6 +35,6 @@ void Hammer::setName(std::string name){
     this->name = name;
 }
 
-std::string Hammer::getName() {
+std::string Hammer::getName() const {
     return this->name;
 }

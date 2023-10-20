@@ -8,7 +8,6 @@ public:
     
 
     Hammer() ;
-
     ~Hammer(); 
 
     void setNumberOfUses(int uses);
@@ -23,7 +22,7 @@ public:
 
     void setName(std::string name);
 
-    std::string getName();
+    std::string getName() const;
 
 private:
     int numberOfUses;

@@ -2,7 +2,7 @@
 #include <string>
 
 
-Shovel::Shovel() : Tool() {
+Shovel::Shovel() {
     this->setName("Shovel");
 }
 

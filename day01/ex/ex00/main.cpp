@@ -22,35 +22,33 @@ int main() {
     // Atribui o Shovel ao Worker
     worker->assignTool(hammer);
 
-    if (worker->getTool()->isBusy()) {
-        std::cout << "Entrou no shovel está ocupado" << std::endl;
-        worker->retrieveTool();
-    } 
+  
+    worker->retrieveTool(worker2,hammer);
+     
 
-    worker2->assignTool(shovel);
+    //worker2->assignTool(shovel);
 
     // Exibe informações iniciais
-    std::cout << "Informações do Worker (antes de usar a Shovel):" << std::endl;
+    std::cout << "Informações do Worker (antes de usar a Ferramenta):" << std::endl;
     worker->displayInfo();
-    std::cout << "Número de usos da hammer: " << hammer->getNumberOfUses() << std::endl;
 
     // O Worker usa a Shovel
-    worker2->getTool()->use();
+    worker2->use();
    // worker->retrieveTool();
 
-   std::cout << "Nome da Tool usada: " << worker2->getTool()->getName()<< std::endl;
    
     // Exibe informações após o uso
-    std::cout << "\nInformações do Worker (depois de usar a Shovel):" << std::endl;
+    std::cout << "\nInformações do Worker (depois de usar a Ferramenta):" << std::endl;
     worker->displayInfo();
-    std::cout << "Número de usos restantes da Shovel: " << shovel->getNumberOfUses() << std::endl;
+    
     
     worker2->assignTool(shovel);
-    worker2->getTool()->use();
+    worker2->assignTool(hammer);
+    worker2->use();
 
     std::cout << "\nInformações do Worker (depois de usar a Shovel):" << std::endl;
     worker2->displayInfo();
-    std::cout << "Número de usos restantes da Shovel: " << shovel->getNumberOfUses() << std::endl;
+    
 
 
     // O Worker é destruído, mas a Shovel não deve ser destruída
@@ -65,18 +63,19 @@ int main() {
 
     
     // Verifica se o Shovel ainda está na memória
-    if (worker->getTool() != NULL) {
-        std::cout << "O Shovel do primeiro Worker está  na memória." << std::endl;
+   // if (worker->getTool() != NULL) {
+    //    std::cout << "O Shovel do primeiro Worker está  na memória." << std::endl;
     
-    }
+  //  }
 
-     if (worker2->getTool() != NULL) {
-        std::cout << "O Shovel do segundo Worker está  na memória." << std::endl;
+//     if (worker2->getTool() != NULL) {
+  //      std::cout << "O Shovel do segundo Worker está  na memória." << std::endl;
     
-    }
+   // }
     
     delete worker2;
     delete worker;
+    delete hammer;
 
     return 0;
 }

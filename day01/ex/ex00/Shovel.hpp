@@ -7,7 +7,7 @@
 class Shovel : public Tool {
 public:
     
-    Shovel();
+    Shovel() ;
     ~Shovel(); 
 
     void setNumberOfUses(int uses);
