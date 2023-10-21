@@ -29,7 +29,7 @@ fclean: clean
 
 re: fclean all
 
-val: fclean
+val: fclean all
 	valgrind --quiet ./$(NAME)
 
 .PHONY: all clean fclean re
