@@ -21,18 +21,6 @@ int main() {
     Tool* shovel4 = new Shovel();
     Tool* hammer4 = new Hammer();
 
-    shovel->setNumberOfUses(10);
-    hammer->setNumberOfUses(10);
-
-    shovel2->setNumberOfUses(10);
-    hammer2->setNumberOfUses(10);
-
-    shovel3->setNumberOfUses(10);
-    hammer3->setNumberOfUses(10);
-
-    shovel4->setNumberOfUses(10);
-    hammer4->setNumberOfUses(10);
-
   
     Worker* worker = new Worker(10, 100, 1, 1000, 11);
     Worker* worker2 = new Worker(20, 200, 2, 2000, 22);
@@ -41,33 +29,40 @@ int main() {
 
     // Atribui o Shovel ao Worker
     worker->assignTool(hammer);
-    worker->assignTool(shovel2);
+    worker->assignTool(shovel);
     worker->assignTool(shovel3);
 
     worker->assignTool(shovel2);
-    worker->assignTool(shovel3);
+    worker->assignTool(hammer2);
+    worker->assignTool(hammer3);
+    worker->assignTool(hammer4);
+    //worker->assignTool(shovel3);
 
-    worker3->assignTool(shovel3);
+    worker3->assignTool(shovel4);
     worker4->assignTool(shovel4);
 
   
-    worker->retrieveTool(worker2,hammer);
-    worker->retrieveTool(worker2,shovel3);
+    //worker->retrieveTool(hammer);
+    //worker->retrieveTool(shovel3);
 
+   // worker2->assignTool(hammer);
+   // worker2->assignTool(shovel3);
 
      
 
     //worker2->assignTool(shovel);
-
-    // Exibe informações iniciais
-    std::cout << "Informações do Worker (antes de usar a Ferramenta):" << std::endl;
+    std::cout << "Worker Information (before to use Tool):" << std::endl;
     worker->displayInfo();
 
-    // O Worker usa a Shovel
-    worker2->useTools();
-   // worker->retrieveTool();
+    worker->useTools();
+   
+   std::cout << "Worker Information (after to use Tool):" << std::endl;
+    worker->displayInfo();
+    
 
-   // Include Worker header if you have a separate Worker class header
+    // O Worker usa as Tools
+    worker->useTools();
+   // worker->retrieveTool();
 
     // Exibe informações após o uso
 
@@ -89,7 +84,7 @@ int main() {
 
     // Verifica se o Shovel ainda está na memória
     if (shovel != NULL) {
-        std::cout << "O Shovel ainda está na memória." << std::endl;
+        std::cout << "The Shovel still in memory." << std::endl;
         delete shovel; // Libera a memória do Shovel, se necessário
     }
 

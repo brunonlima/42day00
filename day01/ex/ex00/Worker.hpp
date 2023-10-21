@@ -4,6 +4,7 @@
 #include <vector>
 #include "Workshop.hpp"
 
+class Tool;
 class Workshop;
 
 class Worker {
@@ -15,7 +16,7 @@ public:
     ~Worker();
 
     void assignTool(Tool* tool);
-    void retrieveTool(Worker* nextWorker, Tool* tool );
+    void retrieveTool( Tool* tool );
     void useTools();
     void work();
     void registerToWorkshop(Workshop* workshop);

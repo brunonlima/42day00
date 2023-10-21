@@ -10,7 +10,6 @@ public:
     Shovel() ;
     ~Shovel(); 
 
-    void setNumberOfUses(int uses);
 
     void use();
 
@@ -20,6 +19,10 @@ public:
 
     void setBusy(bool busy);
 
+    void setWorker(Worker* worker);
+
+    Worker* getWorker();
+
     void setName(std::string name);
 
     std::string getName() const;
@@ -28,6 +31,7 @@ private:
     int numberOfUses;
     bool busy;
     std::string name;
+    void setNumberOfUses(int uses);
 };
 
 

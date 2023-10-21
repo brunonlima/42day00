@@ -13,24 +13,30 @@ Worker::Worker(int x, int y, int z, int level, int exp) {
 }
 
 Worker::~Worker() {
-
-    
+   
 }
 
 void Worker::assignTool(Tool* tool) {
+    if (tool->getWorker() != NULL) {
+
+        for (std::vector<Tool*>::iterator it = tool->getWorker()->tools.begin(); it != tool->getWorker()->tools.end(); ++it) {
+            if ((*it) == tool) {
+                // Tool encontrada, remova-a da lista
+                tool->getWorker()->tools.erase(it);           
+                return ;
+            } 
+        }
+    }
+    tool->setWorker(this);
     this->tools.push_back(tool);
-    
-    
 }
 
-void Worker::retrieveTool(Worker* nextWorker, Tool* tool) {
+void Worker::retrieveTool(Tool* tool) {
     
     for (std::vector<Tool*>::iterator it = this->tools.begin(); it != this->tools.end(); ++it) {
         if ((*it) == tool) {
             // Tool encontrada, remova-a da lista
-            this->tools.erase(it);
-            //Atribuir ao Worker
-            nextWorker->assignTool((*it));           
+            this->tools.erase(it);        
             return ;
         } 
     }
@@ -79,6 +85,7 @@ void Worker::setStatistic(int level, int exp) {
 }
 
 void Worker::displayInfo() {
+    std::cout << "********************************************************************************************************************" << std::endl;
     std::cout << "Position: x = " << this->coordonnee.x << ", y = " << this->coordonnee.y << ", z = " << this->coordonnee.z << std::endl;
     std::cout << "Statistic: level = " << this->stat.level << ", exp = " << this->stat.exp << std::endl;
    
@@ -92,9 +99,11 @@ void Worker::displayInfo() {
             } 
         }
 
+
     } else {
-            std::cout << "I dont have tools!! " << std::endl;;
+            std::cout << "I dont have tools to display!! " <<" Worker At" << "Position: x = " << this->coordonnee.x << ", y = " << this->coordonnee.y << ", z = " << this->coordonnee.z << std::endl;;
     }
+    std::cout << "********************************************************************************************************************" << std::endl;
 }
 
 
@@ -108,7 +117,7 @@ void Worker::useTools() {
             }
         }
     } else {
-            std::cout << "I dont have tools " << std::endl;;
+            std::cout << "I dont have tools to use !!"<<" Worker At" << "Position: x = " << this->coordonnee.x << ", y = " << this->coordonnee.y << ", z = " << this->coordonnee.z  << std::endl;;
     }
 }
 

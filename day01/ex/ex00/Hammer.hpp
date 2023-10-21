@@ -10,8 +10,6 @@ public:
     Hammer() ;
     ~Hammer(); 
 
-    void setNumberOfUses(int uses);
-
     void use();
 
     int getNumberOfUses() const;
@@ -19,6 +17,10 @@ public:
     bool isBusy();
 
     void setBusy(bool busy);
+
+    void setWorker(Worker* worker);
+
+    Worker* getWorker();
 
     void setName(std::string name);
 
@@ -28,6 +30,7 @@ private:
     int numberOfUses;
     bool busy;
     std::string name;
+    void setNumberOfUses(int uses);
 
 };
 

@@ -4,14 +4,13 @@
 
 Shovel::Shovel() {
     this->setName("Shovel");
+    this->setNumberOfUses(0);
 }
 
 Shovel::~Shovel() {
 }
 void Shovel::use() {
-    if (numberOfUses > 0) {
-        numberOfUses--;
-    }
+    ++this->numberOfUses;
 }
 
 void Shovel::setNumberOfUses(int uses){
@@ -29,6 +28,14 @@ bool Shovel::isBusy()
 
 void Shovel::setBusy(bool shovel_busy){
     busy = shovel_busy;
+}
+
+void Shovel::setWorker(Worker* worker){
+    this->worker = worker;
+}
+
+Worker* Shovel::getWorker() {
+    return this->worker;
 }
 
 void Shovel::setName(std::string name){
