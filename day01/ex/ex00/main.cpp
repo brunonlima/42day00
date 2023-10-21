@@ -12,18 +12,49 @@ int main() {
     Tool* shovel = new Shovel();
     Tool* hammer = new Hammer();
 
-    shovel->setNumberOfUses(5);
-    hammer->setNumberOfUses(5);
+    Tool* shovel2 = new Shovel();
+    Tool* hammer2 = new Hammer();
 
-    // Cria um Worker
-    Worker* worker = new Worker(10, 20, 30, 5, 100);
-    Worker* worker2 = new Worker(40, 50, 80, 7, 200);
+    Tool* shovel3 = new Shovel();
+    Tool* hammer3 = new Hammer();
+
+    Tool* shovel4 = new Shovel();
+    Tool* hammer4 = new Hammer();
+
+    shovel->setNumberOfUses(10);
+    hammer->setNumberOfUses(10);
+
+    shovel2->setNumberOfUses(10);
+    hammer2->setNumberOfUses(10);
+
+    shovel3->setNumberOfUses(10);
+    hammer3->setNumberOfUses(10);
+
+    shovel4->setNumberOfUses(10);
+    hammer4->setNumberOfUses(10);
+
+  
+    Worker* worker = new Worker(10, 100, 1, 1000, 11);
+    Worker* worker2 = new Worker(20, 200, 2, 2000, 22);
+    Worker* worker3 = new Worker(30, 300, 3, 3000, 33);
+    Worker* worker4 = new Worker(40, 300, 4, 4000, 44);
 
     // Atribui o Shovel ao Worker
     worker->assignTool(hammer);
+    worker->assignTool(shovel2);
+    worker->assignTool(shovel3);
+
+    worker->assignTool(shovel2);
+    worker->assignTool(shovel3);
+
+    worker3->assignTool(shovel3);
+    worker4->assignTool(shovel4);
 
   
     worker->retrieveTool(worker2,hammer);
+    worker->retrieveTool(worker2,shovel3);
+
+
      
 
     //worker2->assignTool(shovel);
@@ -39,7 +70,7 @@ int main() {
    // Include Worker header if you have a separate Worker class header
 
     // Exibe informações após o uso
-    std::cout << "\nInformações do Worker (depois de usar a Ferramenta):" << std::endl;
+
     worker->displayInfo();
     
     
@@ -47,7 +78,7 @@ int main() {
     worker2->assignTool(hammer);
     worker2->useTools();
 
-    std::cout << "\nInformações do Worker (depois de usar a Shovel):" << std::endl;
+
     worker2->displayInfo();
     
 

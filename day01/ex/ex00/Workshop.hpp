@@ -3,12 +3,12 @@
 
 #include "Worker.hpp" 
 #include <vector> 
-class Worker;
 
+class Worker;
 
 class Workshop {
 public:
-    Workshop(); // Construtor
+    Workshop(); 
     ~Workshop();
 
     void registerWorker(Worker* worker);
@@ -16,7 +16,7 @@ public:
     void executeWorkDay();
 
 private:
-    std::vector<Worker*> workers; // Declare o vector aqui
+    std::vector<Worker*> workers; 
 };
 
 #endif

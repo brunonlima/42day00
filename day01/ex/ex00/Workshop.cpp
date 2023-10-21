@@ -1,8 +1,6 @@
 #include "Workshop.hpp"
 
-
 Workshop::Workshop() {
-    // Construtor, se necessário
 }
 
 Workshop::~Workshop(){

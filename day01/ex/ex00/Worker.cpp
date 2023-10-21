@@ -78,7 +78,6 @@ void Worker::setStatistic(int level, int exp) {
     this->stat.exp = exp;
 }
 
-// Method to display information
 void Worker::displayInfo() {
     std::cout << "Position: x = " << this->coordonnee.x << ", y = " << this->coordonnee.y << ", z = " << this->coordonnee.z << std::endl;
     std::cout << "Statistic: level = " << this->stat.level << ", exp = " << this->stat.exp << std::endl;
