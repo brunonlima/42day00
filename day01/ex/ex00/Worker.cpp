@@ -36,7 +36,7 @@ void Worker::retrieveTool(Worker* nextWorker, Tool* tool) {
     }
     
 
-    std::cout << "Ferramenta não encontrada." << std::endl;
+    std::cout << "Tool NOT FOUND." << std::endl;
 
 }
 
@@ -87,13 +87,13 @@ void Worker::displayInfo() {
         for (std::vector<Tool*>::iterator it = this->tools.begin(); it != this->tools.end(); ++it) {
             
             if ((*it) != NULL) {
-                std::cout << "Ferramenta Utilizada: " << (*it)->getName() << std::endl;
-                std::cout << "Número de usos restantes da Ferramenta: " << (*it)->getNumberOfUses() << std::endl;
+                std::cout << "Used Tool: " << (*it)->getName()<<" -  "<< &(*it) << std::endl;
+                std::cout << "Tool was used: " << (*it)->getNumberOfUses() << std::endl;
             } 
         }
 
     } else {
-            std::cout << "Estou sem ferramenta " << std::endl;;
+            std::cout << "I dont have tools!! " << std::endl;;
     }
 }
 
@@ -108,7 +108,7 @@ void Worker::useTools() {
             }
         }
     } else {
-            std::cout << "Estou sem ferramenta " << std::endl;;
+            std::cout << "I dont have tools " << std::endl;;
     }
 }
 

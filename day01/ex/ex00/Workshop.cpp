@@ -1,4 +1,5 @@
 #include "Workshop.hpp"
+#include  <iostream>
 
 Workshop::Workshop() {
 }
@@ -21,6 +22,7 @@ void Workshop::releaseWorker(Worker* worker) {
 }
 
 void Workshop::executeWorkDay() {
+    std::cout << "Workshop - "<< &(*this) << std::endl;;
     for (std::vector<Worker*>::iterator it = workers.begin(); it != workers.end(); ++it) {
         (*it)->work();
     }
