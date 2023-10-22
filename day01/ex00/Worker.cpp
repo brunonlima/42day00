@@ -17,6 +17,8 @@ Worker::~Worker() {
 }
 
 void Worker::assignTool(Tool* tool) {
+    tool->setWorker(this);
+    
     if (tool->getWorker() != NULL) {
 
         for (std::vector<Tool*>::iterator it = tool->getWorker()->tools.begin(); it != tool->getWorker()->tools.end(); ++it) {
