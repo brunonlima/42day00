@@ -17,17 +17,18 @@ Worker::~Worker() {
 }
 
 void Worker::assignTool(Tool* tool) {
-    
-    tool->setWorker(this);
 
-    for (std::vector<Tool*>::iterator it = tool->getWorker()->tools.begin(); it != tool->getWorker()->tools.end(); ++it) {
-        if ((*it) == tool) {
-            // Tool encontrada, remova-a da lista
-            tool->getWorker()->tools.erase(it);           
-            return ;
-        } 
-     }
-     
+    if (tool->getWorker() != NULL) {
+        for (std::vector<Tool*>::iterator it = tool->getWorker()->tools.begin(); it != tool->getWorker()->tools.end(); ++it) {
+            if ((*it) == tool) {
+                // Tool encontrada, remova-a da lista
+                tool->getWorker()->tools.erase(it);
+                return ;
+            } 
+        }
+    }
+    
+    tool->setWorker(this); 
     this->tools.push_back(tool);
 }
 

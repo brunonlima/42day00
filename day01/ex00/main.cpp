@@ -75,6 +75,8 @@ int main() {
 
 
     worker2->displayInfo();
+
+    worker->displayInfo();
     
 
 
