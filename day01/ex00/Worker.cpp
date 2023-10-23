@@ -27,7 +27,7 @@ void Worker::assignTool(Tool* tool) {
             } 
         }
     }
-    
+
     tool->setWorker(this); 
     this->tools.push_back(tool);
 }

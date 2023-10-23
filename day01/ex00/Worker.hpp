@@ -13,7 +13,7 @@ public:
     Worker(int x, int y, int z, int level, int exp);
 
     // Destructor
-    ~Worker();
+  ~Worker();
 
     void assignTool(Tool* tool);
     void retrieveTool( Tool* tool );
