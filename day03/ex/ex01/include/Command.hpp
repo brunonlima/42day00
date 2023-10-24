@@ -7,8 +7,9 @@
 class Command {
 public:
     Command(int id, const std::string& date, const std::string& client);
-    void add_article(const std::string& article, int quantity);
-    double get_total_price() const ;
+    void add_article(const std::string& article, int quantity) ;
+    virtual double get_total_price() = 0 ;
+    double calculateArticlePrice(const std::string& article, int quantity);
 
 
 protected:

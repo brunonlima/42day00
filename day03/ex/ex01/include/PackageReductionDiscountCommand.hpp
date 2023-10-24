@@ -1,15 +1,18 @@
 #ifndef PACKAGEREDUCTIONDISCOUNTCOMMAND_HPP
 #define PACKAGEREDUCTIONDISCOUNTCOMMAND_HPP
 
-#include "command.hpp"
+#include "Command.hpp"
 
 class PackageReductionDiscountCommand : public Command {
 public:
-    PackageReductionDiscountCommand(int id, const std::string& date, const std::string& client, double total_price);
-    double get_total_price() const;
+    PackageReductionDiscountCommand(int id, const std::string& date, const std::string& client);
+    double get_total_price();
+    double calculateArticlePrice(const std::string& article, int quantity);
+
+
 
 private:
-    double total_price;
+    double totalPrice;
 };
 
 #endif // PACKAGEREDUCTIONDISCOUNTCOMMAND_HPP
