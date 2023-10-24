@@ -1,5 +1,5 @@
 # Ignore arquivos e pastas gerados pela compilação
 bin/
 *.o
-ex00
+ex01
 .vscode

@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-NAME = ex00
+NAME = ex01
 BIN_DIR = bin
 SRC_DIR = src
 INCLUDE_DIR = include

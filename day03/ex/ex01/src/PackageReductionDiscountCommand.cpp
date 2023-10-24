@@ -5,12 +5,8 @@ PackageReductionDiscountCommand::PackageReductionDiscountCommand(int id, const s
     : Command(id, date, client), totalPrice() {}
 
 double PackageReductionDiscountCommand::get_total_price()  {
-    this->totalPrice = 0.0;
-        
-    // Calculate the total price based on articles and their quantities
-    for (size_t i = 0; i < this->articles.size(); ++i) {
-        this->totalPrice += calculateArticlePrice(this->articles[i].first, this->articles[i].second);
-    }
+    
+    this->totalPrice = Command::get_total_price();
     // Apply a 10 euro discount if the total price exceeds 150 euros
 
     if (this->totalPrice > 150) {

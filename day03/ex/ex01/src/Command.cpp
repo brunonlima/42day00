@@ -11,7 +11,12 @@ void Command::add_article(const std::string& article, int quantity) {
 
 double Command::get_total_price()  {
     double totalPrice = 0.0;
-    std::cout << "Entrouu" << std::endl;
+
+     // Calculate the total price based on articles and their quantities
+    for (size_t i = 0; i < this->articles.size(); ++i) {
+        totalPrice += calculateArticlePrice(this->articles[i].first, this->articles[i].second);
+    }
+
     return totalPrice;
 }
 

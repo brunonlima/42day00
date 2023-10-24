@@ -5,16 +5,11 @@ TuesdayDiscountCommand::TuesdayDiscountCommand(int id, const std::string& date, 
 : Command(id, date, client), totalPrice(0.0) {}
 
 double TuesdayDiscountCommand::get_total_price()  {
-    this->totalPrice = 0.0;
-        
-    // Calculate the total price based on articles and their quantities
-    for (size_t i = 0; i < this->articles.size(); ++i) {
-        this->totalPrice += calculateArticlePrice(this->articles[i].first, this->articles[i].second);
-    }
+    this->totalPrice = Command::get_total_price();
 
     // Apply a 10% discount on Tuesdays (0.9)
     if (this->date == "Tuesday") {
-        std::cout << "Command on Tuesday apply discount on: " << totalPrice << " euros" << std::endl;
+        std::cout << "Command on Tuesday apply discount on: " << this->totalPrice << " euros" << std::endl;
         double discount = this->totalPrice * 0.1;
         this->totalPrice = this->totalPrice * 0.9 ;
         std::cout << "Value discount applied : " << discount << " euros" << std::endl;
