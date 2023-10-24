@@ -8,13 +8,13 @@
 class Car {
 
 private:
-    Engine engine;
-    Transmission transmission;
-    Wheels wheel;
-    Brakes brakes;
+    Engine* engine;
+    Transmission* transmission;
+    Wheels* wheel;
+    Brakes* brakes;
 
 public:
-   Car(Engine engine, Transmission transmission, Wheels wheel, Brakes brakes);
+   Car(Engine* engine, Transmission* transmission, Wheels* wheel, Brakes* brakes);
     void start();
     void stop();
     void accelerate(int speed);

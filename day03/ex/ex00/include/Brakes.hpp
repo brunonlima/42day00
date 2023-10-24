@@ -3,6 +3,8 @@
 
 class Brakes {
 public:
+    Brakes();
+    ~Brakes();
     void applyForceOnBrakes(int force);
     void applyEmergencyBrakes();
 };

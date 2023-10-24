@@ -1,6 +1,10 @@
 #include "Engine.hpp"
 #include <iostream>
 
+Engine::Engine() {}
+
+Engine::~Engine(){}
+
 void Engine::start() {
     std::cout << "Engine started." << std::endl;
 }

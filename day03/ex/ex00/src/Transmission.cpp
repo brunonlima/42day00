@@ -1,6 +1,10 @@
 #include "Transmission.hpp"
 #include <iostream>
 
+Transmission::Transmission(){}
+Transmission::~Transmission(){}
+
+
 void Transmission::shiftGearsUp() {
     std::cout << "Shifted up to the next gear." << std::endl;
 }

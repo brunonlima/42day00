@@ -3,6 +3,8 @@
 
 class Transmission {
 public:
+    Transmission();
+    ~Transmission();
     void shiftGearsUp();
     void shiftGearsDown();
     void reverse();

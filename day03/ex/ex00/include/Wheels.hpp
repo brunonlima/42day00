@@ -3,6 +3,8 @@
 
 class Wheels {
 public:
+    Wheels();
+    ~Wheels();
     void turnWheel(int angle);
     void straightenWheels();
 };
