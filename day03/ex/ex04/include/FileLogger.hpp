@@ -2,18 +2,19 @@
 #define FILELOGGER_HPP
 
 #include "ILogger.hpp"
+#include "ILoggerDateHeader.hpp"
 #include <string>
 #include <fstream>
 
-class FileLogger : public ILogger {
+class FileLogger : public ILogger, public ILoggerDateHeader {
 private:
     std::ofstream outputFile;
-    std::string customHeader;
+    bool useDate;
 
 public:
-    FileLogger(const std::string& filename, const std::string& customHeader = "");
+    FileLogger(const std::string& filename, bool useDate);
     void write(const std::string& message);
-    void setHeader(const std::string& customHeader);
+    void useDateHeader(bool useDate);
 };
 
 #endif

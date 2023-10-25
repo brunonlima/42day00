@@ -3,3 +3,4 @@ bin/
 *.o
 ex04
 .vscode
+logfile.txt

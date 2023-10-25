@@ -26,7 +26,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f logfile.txt
 
 re: fclean all
 
