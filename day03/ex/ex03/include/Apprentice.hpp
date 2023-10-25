@@ -7,10 +7,11 @@
 class Apprentice : public Employee , public IApprentice {
 public:
     Apprentice(int hourlyValue, int schoolHours);
-    void executeWorkday(); 
+    int executeWorkday(); 
     int getSchoolHours() const;
-    void logSchoolHours(int hours);
+    int logSchoolHours(int hours);
     int getWorkedHours() const;
+    int getHourlyValue() const;
     
 private:
     int schoolHours;

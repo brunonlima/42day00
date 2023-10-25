@@ -5,7 +5,7 @@ class IApprentice {
 public:
     IApprentice();
     virtual ~IApprentice();
-    virtual void logSchoolHours(int hours) = 0;
+    virtual int logSchoolHours(int hours) = 0;
 
 };
 

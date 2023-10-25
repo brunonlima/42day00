@@ -20,8 +20,9 @@ int main() {
       std::cout << "Executing a workday for each employee:" << std::endl;
     for (int i = 0; i < static_cast<int>(sizeof(employees) / sizeof(employees[0])); ++i) {
         Employee* employee = employees[i];
-        employee->executeWorkday();
-        //std::cout << "Employee worked for " << workedHours << " hours." << std::endl;
+        int workedHours = 0 ;
+        workedHours = workedHours + employee->executeWorkday();
+        std::cout << "Employee worked for " << workedHours << " hours." << std::endl;
     }
 
     // Testing Interface Segregation
@@ -34,7 +35,7 @@ int main() {
     manager->calculatePayroll();
 
     // Additional operations
-    contract1->logWorkedHours(8); // Contract employee takes a day off
+   dynamic_cast<ContractEmployee*>(contract1)->logNonWorkedHours(8) ; // Empregado por contrato tirou dayff
 
     std::cout << "Employee non-worked hours for Contract Employee: " << dynamic_cast<ContractEmployee*>(contract1)->getNonWorkedHours() << " hours." << std::endl;
     std::cout << "Employee school hours for Apprentice: " << dynamic_cast<Apprentice*>(apprentice1)->getSchoolHours() << " hours." << std::endl;

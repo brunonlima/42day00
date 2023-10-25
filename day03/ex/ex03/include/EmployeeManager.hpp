@@ -10,8 +10,10 @@ public:
     EmployeeManager(int hourlyValue);
     void addEmployee(Employee* employee);
     void removeEmployee(Employee* employee);
-    void executeWorkday();
+    int executeWorkday();
     void calculatePayroll();
+    int getWorkedHours() const;
+    int getHourlyValue() const;
 
 private:
     std::vector<Employee*> employees;

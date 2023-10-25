@@ -5,13 +5,12 @@ class Employee {
 public:
     Employee(int hourlyValue);
 
-    virtual void executeWorkday() = 0;
+    virtual int executeWorkday() = 0;
 
-    int getHourlyValue() const;
-    void logWorkedHours(int hours);
-    int getWorkedHours() const;
+    virtual int getHourlyValue() const = 0;
+    virtual int getWorkedHours() const = 0;
 
-private:
+protected:
     int hourlyValue;
     int hoursWorked;
 };

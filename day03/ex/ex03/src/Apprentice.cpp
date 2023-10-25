@@ -2,9 +2,8 @@
 
 Apprentice::Apprentice(int hourlyValue, int schoolHours) : Employee(hourlyValue), schoolHours(schoolHours) {}
 
-void Apprentice::executeWorkday() {
-    logWorkedHours(7);
-    logSchoolHours(schoolHours);
+int Apprentice::executeWorkday() {
+    return logSchoolHours(schoolHours);
 }
 
 int Apprentice::getSchoolHours() const {
@@ -15,7 +14,11 @@ int Apprentice::getWorkedHours() const {
     return this->getHourlyValue() + this->getSchoolHours();
 }
 
-void Apprentice::logSchoolHours(int hours) {
-    Apprentice::schoolHours += hours;
+int Apprentice::logSchoolHours(int hours) {
+    return Apprentice::schoolHours += hours;
 }
 
+int Apprentice::getHourlyValue() const {
+    return  this->hourlyValue;
+
+}

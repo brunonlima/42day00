@@ -6,7 +6,7 @@
 
 int main() {
     std::vector<ILogger*> loggers;
-    loggers.push_back(new FileLogger("logfile.txt", false));
+    loggers.push_back(new FileLogger("logfile.txt", true));
     loggers.push_back(new StreamLogger(std::cout, "Console Logger: "));
     loggers.push_back(new StreamLogger(std::cerr, "Error Logger: "));
 
@@ -21,7 +21,6 @@ int main() {
         }
     }
 
-    // Clean up the loggers
     for (std::vector<ILogger*>::iterator it = loggers.begin(); it != loggers.end(); ++it) {
         delete *it;
     }
