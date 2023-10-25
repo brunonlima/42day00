@@ -1,6 +1,9 @@
 #include "EmployeeManager.hpp"
+#include "IManager.hpp"
 #include <iostream>
 #include <algorithm>
+
+EmployeeManager::EmployeeManager(int hourlyValue) : Employee(hourlyValue), IManager(){}
 
 void EmployeeManager::addEmployee(Employee* employee) {
     employees.push_back(employee);
@@ -20,7 +23,7 @@ void EmployeeManager::executeWorkday() {
 void EmployeeManager::calculatePayroll() {
     for (std::vector<Employee*>::iterator it = employees.begin(); it != employees.end(); ++it) {
         Employee* employee = *it;
-        int totalPay = (employee->getWorkedHours() + employee->getSchoolHours()) * employee->getHourlyValue();
+        int totalPay = (employee->getWorkedHours()) * employee->getHourlyValue();
         std::cout << "Pay for Employee: $" << totalPay << std::endl;
     }
 }

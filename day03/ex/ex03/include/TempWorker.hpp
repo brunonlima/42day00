@@ -7,7 +7,7 @@ class TempWorker : public Employee {
 public:
     TempWorker(int hourlyValue);
 
-    int executeWorkday();
+    void executeWorkday();
 };
 
 #endif // TEMPWORKER_HPP

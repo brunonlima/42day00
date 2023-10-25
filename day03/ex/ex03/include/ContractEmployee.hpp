@@ -7,7 +7,7 @@ class ContractEmployee : public Employee {
 public:
     ContractEmployee(int hourlyValue);
 
-    int executeWorkday() ;
+    void executeWorkday() ;
     void logNonWorkedHours(int hours);
     int getNonWorkedHours() const;
 

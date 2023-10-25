@@ -2,9 +2,8 @@
 
 ContractEmployee::ContractEmployee(int hourlyValue) : Employee(hourlyValue), hoursNotWorked(0) {}
 
-int ContractEmployee::executeWorkday() {
+void ContractEmployee::executeWorkday() {
     logWorkedHours(0);
-    return 0;
 }
 
 void ContractEmployee::logNonWorkedHours(int hours) {
