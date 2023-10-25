@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-NAME = ex03
+NAME = ex04
 BIN_DIR = bin
 SRC_DIR = src
 INCLUDE_DIR = include
@@ -26,6 +26,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f logfile.txt
 
 re: fclean all
 
