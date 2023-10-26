@@ -9,6 +9,7 @@ private:
 
 public:
     void execute();
+    CourseFinishedForm();
 };
 
 #endif // COURSEFINISHEDFORM_HPP

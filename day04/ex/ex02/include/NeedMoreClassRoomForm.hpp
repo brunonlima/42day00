@@ -8,6 +8,7 @@ class NeedMoreClassRoomForm : public Form {
 private:
 
 public:
+    NeedMoreClassRoomForm();
     void execute();
 };
 
