@@ -3,9 +3,9 @@
 #define STUDENTLIST_HPP
 
 #include "Repository.hpp"
-#include "../person/student/Student.hpp"
+#include "Student.hpp"
 
-class StudentList : public Repository<Student*> {
+class StudentList : public Repository<Student> {
 };
 
 #endif // STUDENTLIST_HPP

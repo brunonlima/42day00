@@ -2,7 +2,7 @@
 #ifndef STUDENT_HPP
 #define STUDENT_HPP
 
-#include "../Person.hpp"
+#include "Person.hpp"
 #include <vector>
 
 class Course;
