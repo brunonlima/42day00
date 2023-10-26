@@ -18,6 +18,15 @@ public:
         objects.push_back(object);
     }
 
+    bool retrieve(typename std::vector<T*>::size_type index) {
+    if (index < objects.size()) {
+        objects.erase(objects.begin() + index); // Remove o objeto do vetor
+        return true; // Retorna true para indicar sucesso
+    } else {
+        return false; // Retorna false para indicar falha
+    }
+}
+
     T* access(typename std::vector<T*>::size_type index) {
         if (index < objects.size()) {
             return objects[index];
@@ -26,7 +35,7 @@ public:
         }
     }
 
-    std::vector<T*> retrieveAll() {
+    std::vector<T*> listAll() {
         return objects;
     }
 
@@ -35,7 +44,7 @@ private:
 
 
     Repository(const Repository&);
-    Repository& operator=(const Repository&);
+    //Repository& operator=(const Repository&);
 
     static Repository* instance;
     std::vector<T*> objects;
