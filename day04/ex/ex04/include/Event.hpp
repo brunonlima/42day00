@@ -1,4 +1,5 @@
 enum class Event
 {
-	RingBell
+	START_PAUSE,
+	PAUSE_IS_OVER
 };
