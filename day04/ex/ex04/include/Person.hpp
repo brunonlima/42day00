@@ -12,6 +12,7 @@ class Person {
 private:
     std::string _name;
     Room* _currentRoom;
+    Room* _previousRoom;
     Bell* _bell;
     bool _recreation;
 

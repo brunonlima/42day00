@@ -4,6 +4,7 @@
 #include "Student.hpp"
 #include "Professor.hpp"
 #include "Event.hpp"
+#include "Headmaster.hpp"
 #include <iostream>
 
 
@@ -20,7 +21,7 @@ public:
     void addObserver(Professor* professor) {
         professors.push_back(professor);
     }
-
+protected:
     void ringBell() {
         std::cout << "Bell rings." << std::endl;
         for (size_t i = 0; i < students.size(); ++i) {
@@ -30,5 +31,6 @@ public:
             professors[i]->notify(Event::RingBell);
         }
     }
+friend Headmaster;
 };
 #endif

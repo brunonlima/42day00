@@ -8,7 +8,7 @@
 
 class Form;
 
-class Headmaster : public Staff {
+class Headmaster : public Staff, Bell {
 private:
     std::vector<Form*> _formToValidate;
 
