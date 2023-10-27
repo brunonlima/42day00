@@ -21,6 +21,7 @@ int main() {
     needMoreClassRoom->fillForm();
     courseFinishedForm->fillForm();
 
+    //courseFinishedForm->execute();
 
     headmaster->receiveForm(subscriptionForm);
     headmaster->receiveForm(needCourseCreationForm);
@@ -32,6 +33,7 @@ int main() {
         headmaster->execute(form);
         std::cout << "Field 1 : " <<form->getField1() << std::endl;
         std::cout << "Field 2 : " <<form->getField2() << std::endl;
+        std::cout << std::endl;
         
     }
 
