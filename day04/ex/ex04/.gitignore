@@ -1,0 +1,5 @@
+# Ignore arquivos e pastas gerados pela compilação
+bin/
+*.o
+ex02
+.vscode
