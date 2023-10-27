@@ -1,15 +1,15 @@
-// Repository.hpp
-#ifndef REPOSITORY_HPP
-#define REPOSITORY_HPP
+// Singleton.hpp
+#ifndef SINGLETON_HPP
+#define SINGLETON_HPP
 
 #include <vector>
 
 template <typename T>
-class Repository {
+class Singleton {
 public:
-    static Repository* getInstance() {
+    static Singleton* getInstance() {
         if (!instance) {
-            instance = new Repository;
+            instance = new Singleton;
         }
         return instance;
     }
@@ -40,17 +40,17 @@ public:
     }
 
 private:
-    Repository() {} 
+    Singleton() {} 
 
 
-    Repository(const Repository&);
-    //Repository& operator=(const Repository&);
+    Singleton(const Singleton&);
+    //Singleton& operator=(const Singleton&);
 
-    static Repository* instance;
+    static Singleton* instance;
     std::vector<T*> objects;
 };
 
 template <typename T>
-Repository<T>* Repository<T>::instance = 0;
+Singleton<T>* Singleton<T>::instance = 0;
 
-#endif // REPOSITORY_HPP
+#endif // Singleton_HPP

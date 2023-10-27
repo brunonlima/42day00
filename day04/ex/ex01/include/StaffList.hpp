@@ -2,10 +2,10 @@
 #ifndef STAFFLIST_HPP
 #define STAFFLIST_HPP
 
-#include "Repository.hpp"
+#include "Singleton.hpp"
 #include "Staff.hpp"
 
-class StaffList : public Repository<Staff> {
+class StaffList : public Singleton<Staff> {
 };
 
 #endif // STAFFLIST_HPP

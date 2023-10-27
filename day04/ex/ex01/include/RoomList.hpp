@@ -2,10 +2,10 @@
 #ifndef ROOMLIST_HPP
 #define ROOMLIST_HPP
 
-#include "Repository.hpp"
+#include "Singleton.hpp"
 #include "Room.hpp"
 
-class RoomList : public Repository<Room> {
+class RoomList : public Singleton<Room> {
 };
 
 #endif // ROOMLIST_HPP

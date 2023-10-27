@@ -2,10 +2,10 @@
 #ifndef STUDENTLIST_HPP
 #define STUDENTLIST_HPP
 
-#include "Repository.hpp"
+#include "Singleton.hpp"
 #include "Student.hpp"
 
-class StudentList : public Repository<Student> {
+class StudentList : public Singleton<Student> {
 };
 
 #endif // STUDENTLIST_HPP

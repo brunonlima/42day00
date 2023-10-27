@@ -2,10 +2,10 @@
 #ifndef COURSELIST_HPP
 #define COURSELIST_HPP
 
-#include "Repository.hpp"
+#include "Singleton.hpp"
 #include "Course.hpp"
 
-class CourseList : public Repository<Course> {
+class CourseList : public Singleton<Course> {
 };
 
 #endif // STUDENTLIST_HPP
