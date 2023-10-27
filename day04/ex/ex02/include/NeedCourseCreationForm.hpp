@@ -6,8 +6,8 @@
 
 class NeedCourseCreationForm : public Form {
 private:
-
 public:
+    NeedCourseCreationForm();
     void execute();
 };
 

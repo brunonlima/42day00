@@ -13,7 +13,10 @@ private:
     std::vector<Form*> _formToValidate;
 
 public:
+    Headmaster();
     void receiveForm(Form* p_form);
+    void execute(Form* form);
+    std::vector<Form*> getFormsToValidate();
 };
 
 #endif // HEADMASTER_HPP

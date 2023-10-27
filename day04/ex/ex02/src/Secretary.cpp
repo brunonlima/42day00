@@ -1,11 +1,15 @@
-#include "FormFactory.hpp"
+#include "Secretary.hpp"
 #include "Form.hpp"
 #include "FormType.hpp"
 #include "CourseFinishedForm.hpp"
 #include "NeedMoreClassRoomForm.hpp"
+#include "NeedCourseCreationForm.hpp"
+#include "SubscriptionToCourseForm.hpp"
 
-//Parei aqui
-Form* FormFactory::createForm(FormType formType) {
+Secretary::Secretary() {
+}
+
+Form* Secretary::createForm(FormType formType) {
     switch (formType) {
         case FormType::CourseFinished:
             return new CourseFinishedForm();

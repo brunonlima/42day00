@@ -8,6 +8,7 @@ class SubscriptionToCourseForm : public Form {
 private:
 
 public:
+    SubscriptionToCourseForm();
     void execute();
 };
 

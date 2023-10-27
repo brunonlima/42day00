@@ -7,6 +7,7 @@
 
 class Secretary : public Staff {
 public:
+    Secretary();
     Form* createForm(FormType p_formType);
     void archiveForm(Form* form);
 };
