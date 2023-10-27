@@ -14,3 +14,17 @@ void CourseFinishedForm::execute() {
         std::cout << "ERROR -- FORM DOES NOT SIGNED!!" << std::endl;
     }
 }
+
+void CourseFinishedForm::fillForm() {
+
+    field1 = "Course finished form - title";
+    field2 = "Course Certificate";
+}
+
+std::string CourseFinishedForm::getField1() const {
+    return field1;
+}
+
+std::string CourseFinishedForm::getField2() const {
+    return field2;
+}

@@ -10,14 +10,3 @@ Student::Student(std::string name) : _name(name) {
 
 }
 
-//void Student::attendClass(Classroom* p_classroom) {
-
-//}
-
-//void Student::exitClass() {
-
-//}
-
-//void Student::graduate(Course* p_course) {
-
-//}

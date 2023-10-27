@@ -13,19 +13,26 @@ int main() {
 
     Form* subscriptionForm = secretary->createForm(FormType::SubscriptionToCourse);
     Form* needCourseCreationForm = secretary->createForm(FormType::NeedCourseCreation);
-    Form* subscriptionToCourseForm = secretary->createForm(FormType::SubscriptionToCourse);
+    Form* needMoreClassRoom = secretary->createForm(FormType::NeedMoreClassRoom);
     Form* courseFinishedForm = secretary->createForm(FormType::CourseFinished);
 
-    subscriptionForm->execute();
+    subscriptionForm->fillForm();
+    needCourseCreationForm->fillForm();
+    needMoreClassRoom->fillForm();
+    courseFinishedForm->fillForm();
+
 
     headmaster->receiveForm(subscriptionForm);
     headmaster->receiveForm(needCourseCreationForm);
-    headmaster->receiveForm(subscriptionToCourseForm);
+    headmaster->receiveForm(needMoreClassRoom);
     headmaster->receiveForm(courseFinishedForm);
 
     for (size_t i = 0; i < headmaster->getFormsToValidate().size(); ++i) {
         Form* form = headmaster->getFormsToValidate()[i];
         headmaster->execute(form);
+        std::cout << "Field 1 : " <<form->getField1() << std::endl;
+        std::cout << "Field 2 : " <<form->getField2() << std::endl;
+        
     }
 
 

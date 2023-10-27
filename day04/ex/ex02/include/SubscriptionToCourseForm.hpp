@@ -10,6 +10,9 @@ private:
 public:
     SubscriptionToCourseForm();
     void execute();
+    void fillForm();
+    std::string  getField1() const ;
+    std::string  getField2() const ;
 };
 
 #endif // SUBSCRIPTIONTOCOURSEFORM_HPP

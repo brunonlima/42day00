@@ -15,3 +15,16 @@ void NeedMoreClassRoomForm::execute() {
     }
 }
 
+void NeedMoreClassRoomForm::fillForm() {
+
+    field1 = "Need More Class Room form - title";
+    field2 = "Class enough!!";
+}
+
+std::string NeedMoreClassRoomForm::getField1() const {
+    return field1;
+}
+
+std::string NeedMoreClassRoomForm::getField2() const {
+    return field2;
+}

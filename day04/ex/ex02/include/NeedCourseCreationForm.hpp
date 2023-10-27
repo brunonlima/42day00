@@ -9,6 +9,9 @@ private:
 public:
     NeedCourseCreationForm();
     void execute();
+    void fillForm();
+    std::string  getField1() const ;
+    std::string  getField2() const ;
 };
 
 #endif // NEEDCOURSECREATIONFORM_HPP

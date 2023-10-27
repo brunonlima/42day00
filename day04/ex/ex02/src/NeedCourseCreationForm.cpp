@@ -13,3 +13,16 @@ void NeedCourseCreationForm::execute() {
         std::cout << "ERROR -- FORM DOES NOT SIGNED!!" << std::endl;
     }
 }
+void NeedCourseCreationForm::fillForm() {
+   
+    field1 = "Need course creation form - title";
+    field2 = "Curse XX need Creation";
+}
+
+std::string NeedCourseCreationForm::getField1() const {
+    return field1;
+}
+
+std::string NeedCourseCreationForm::getField2() const {
+    return field2;
+}
