@@ -1,4 +1,3 @@
-
 #ifndef FORMTYPE_HPP
 #define FORMTYPE_HPP
 

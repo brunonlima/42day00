@@ -4,6 +4,7 @@
 #define FORM_HPP
 #include <iostream>
 
+
 class Form {
 private:
     FormType _formType;

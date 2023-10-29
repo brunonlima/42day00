@@ -1,5 +1,5 @@
-#ifndef FORMTYPE_HPP
-#define FORMTYPE_HPP
+#ifndef EVENT_HPP
+#define EVENT_HPP
 
 
 enum class Event

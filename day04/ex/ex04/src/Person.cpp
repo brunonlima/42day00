@@ -9,15 +9,12 @@ Person::Person() : _name(""), _currentRoom(NULL) {}
 
 Person::Person(std::string p_name) : _name(p_name), _currentRoom(NULL) {}
 
-Person::Person(const std::string& p_name, Bell* bell)
-        : _name(p_name), _currentRoom(NULL), _bell(bell) {}
-
 
 bool Person::Person::inRecreation(){
     return this->_recreation;
 }
 
-void Person::Person::setRecration(bool recreation){
+void Person::Person::setRecreation(bool recreation){
     this->_recreation = recreation;
 }
 

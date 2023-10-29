@@ -7,18 +7,17 @@
 #include "Headmaster.hpp"
 #include <iostream>
 
+class Headmaster;
 
 class Bell {
 private:
     std::vector<Person*> observers;
 
-public:
+protected:
     void addObserver(Person* observer) {
         observers.push_back(observer);
     }
-
-   
-protected:
+    
     void ringBellStopPause() {
         std::cout << "Bell rings!. Pause will stop" << std::endl;
         for (size_t i = 0; i < observers.size(); ++i) {
