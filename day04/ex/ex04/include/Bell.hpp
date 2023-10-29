@@ -1,6 +1,6 @@
 
-#ifndef BELLROOM_HPP
-#define BELLROOM_HPP
+#ifndef BELL_HPP
+#define BELL_HPP
 #include "Student.hpp"
 #include "Professor.hpp"
 #include "Event.hpp"
@@ -10,25 +10,26 @@
 
 class Bell {
 private:
-    std::vector<Student*> students;
-    std::vector<Professor*> professors;
+    std::vector<Person*> observers;
 
 public:
-    void addObserver(Student* student) {
-        students.push_back(student);
+    void addObserver(Person* observer) {
+        observers.push_back(observer);
     }
 
-    void addObserver(Professor* professor) {
-        professors.push_back(professor);
-    }
+   
 protected:
-    void ringBell() {
-        std::cout << "Bell rings." << std::endl;
-        for (size_t i = 0; i < students.size(); ++i) {
-            students[i]->notify(Event::RingBell);
+    void ringBellStopPause() {
+        std::cout << "Bell rings!. Pause will stop" << std::endl;
+        for (size_t i = 0; i < observers.size(); ++i) {
+            observers[i]->notify(Event::PAUSE_END);
         }
-        for (size_t i = 0; i < professors.size(); ++i) {
-            professors[i]->notify(Event::RingBell);
+    }
+
+    void ringBellStartPause() {
+        std::cout << "Bell rings!. Pause will start" << std::endl;
+        for (size_t i = 0; i < observers.size(); ++i) {
+            observers[i]->notify(Event::PAUSE_START);
         }
     }
 friend Headmaster;

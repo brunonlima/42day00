@@ -5,6 +5,7 @@
 #include<vector>
 
 #include "Staff.hpp"
+#include "Bell.hpp"
 
 class Form;
 

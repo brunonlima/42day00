@@ -1,7 +1,9 @@
 // Person.cpp
 #include "Person.hpp"
 #include <iostream>
-#include <Recreation.hpp>
+#include <RecreationList.hpp>
+#include "Event.hpp"
+#include "Room.hpp"
 
 Person::Person() : _name(""), _currentRoom(NULL) {}
 
@@ -31,15 +33,19 @@ void Person::Person::moveTo(Room* room) {
 }
 
 void Person::Person::notify(Event event) {
-        if (event == Event::RingBell) {
-            std::cout << _name << ": I heard the bell ring." << std::endl;
-             
-             if (this->inRecreation()) {
-                
-             }
-        
+
+        if (event == Event::PAUSE_START) {
+            std::cout << _name << ": I heard the bell ring! - I Have free time now." << std::endl;
+            this->_previousRoom = _currentRoom;
+            this->_currentRoom->exit(this);
+        } else if (event == Event::PAUSE_END) {
+            std::cout << _name << ": I heard bell ring! - My free time is over. Time to return to class." << std::endl;
+            this->_currentRoom = _previousRoom; 
+            this->_currentRoom->enter(this);
         }
-};
+}
+
+
 
 
 

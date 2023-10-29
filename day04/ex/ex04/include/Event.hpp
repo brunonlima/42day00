@@ -1,5 +1,11 @@
+#ifndef FORMTYPE_HPP
+#define FORMTYPE_HPP
+
+
 enum class Event
 {
-	START_PAUSE,
-	PAUSE_IS_OVER
+	PAUSE_START,
+	PAUSE_END
 };
+
+#endif
