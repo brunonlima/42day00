@@ -14,7 +14,6 @@ private:
     std::vector<Course*> _subscribedCourse;
 
 public:
-    Student();
     Student(std::string name);
     void attendClass(Classroom* p_classroom);
     void exitClass();

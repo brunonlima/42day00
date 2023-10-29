@@ -19,6 +19,7 @@ public:
     void execute(Form* form);
     std::vector<Form*> getFormsToValidate();
     void ringBell();
+    Bell* getBell();
 };
 
 #endif // HEADMASTER_HPP

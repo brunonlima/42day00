@@ -18,6 +18,7 @@ bool Room::canEnter(Person* person) {
 void Room::enter(Person* person) {
     if (canEnter(person)) {
         _occupants.push_back(person);
+        //std::cout << "Person: "<<person->getName()<< " comming Room." << std::endl;
     } else {
         // Trate a situação em que a pessoa não pode entrar na sala.
     }
@@ -27,6 +28,7 @@ void Room::exit(Person* person) {
     for (std::vector<Person*>::iterator it = _occupants.begin(); it != _occupants.end(); ++it) {
         if (*it == person) {
             _occupants.erase(it);
+            //std::cout << "Person: "<<(*it)->getName()<< " leaving Room." << std::endl;
             return; // Saia do loop assim que o elemento for encontrado e removido.
         }
     }

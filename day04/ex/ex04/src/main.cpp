@@ -4,6 +4,9 @@
 #include "Classroom.hpp"
 #include "Headmaster.hpp"
 #include "StudentList.hpp"
+#include "ProfessorList.hpp"
+
+class Classroom;
 
 int main() {
 
@@ -17,9 +20,16 @@ int main() {
     student1->moveTo(classRoom);
     student2->moveTo(classRoom);
 
-    StudentList::getInstance()->add(student1);
-    StudentList::getInstance()->add(student2);
+    Professor* professor1 = new Professor();
 
+    professor1->moveTo(classRoom);
+
+
+    headmaster->getBell()->addObserver(student1);
+    headmaster->getBell()->addObserver(student2);
+    headmaster->getBell()->addObserver(professor1);
+
+    headmaster->ringBell();
    
 
 

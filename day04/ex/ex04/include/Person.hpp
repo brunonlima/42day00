@@ -13,7 +13,6 @@ private:
     std::string _name;
     Room* _currentRoom;
     Room* _previousRoom;
-    bool _recreation;
 
 public:
     Person();
@@ -23,10 +22,6 @@ public:
     void setName(const std::string& name) { _name = name; }
     void moveTo(Room* room);
     void notify(Event event);
-    bool inRecreation();
-    void setRecreation(bool recreation);
-
-    
 };
 
 #endif // PERSON_HPP

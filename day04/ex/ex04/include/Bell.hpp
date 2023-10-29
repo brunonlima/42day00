@@ -13,7 +13,7 @@ class Bell {
 private:
     std::vector<Person*> observers;
 
-protected:
+public:
     void addObserver(Person* observer) {
         observers.push_back(observer);
     }
